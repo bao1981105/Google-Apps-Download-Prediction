@@ -4,6 +4,7 @@ def preprocess(df,df2):
     import re
     from datetime import datetime
     from sklearn.preprocessing import OrdinalEncoder
+    
     # Make column 'Size' has the same unit of measurement: MB
     df['size_num'] = df.Size.str.extract('(\d+)') #.astype(int)
     df['size_letter'] = df.Size.str.extract('([a-zA-Z]\w{0,})')
@@ -81,7 +82,7 @@ def preprocess2(df,df2):
     from datetime import datetime
     from sklearn.preprocessing import OrdinalEncoder
     # Make column 'Size' has the same unit of measurement: MB
-    df['size_num'] = df.Size.str.extract('(\d+)') #.astype(int)
+    df['size_num'] = df['Size'].str.extract('(\d+)')
     df['size_letter'] = df.Size.str.extract('([a-zA-Z]\w{0,})')
     df['size_num'] = df[['size_num']].fillna(0)
     df['size_num'] = df['size_num'].astype(int)
