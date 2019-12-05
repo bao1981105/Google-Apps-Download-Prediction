@@ -34,6 +34,7 @@ This project will require recent installations of
 * scipy==1.3.0
 * seaborn==0.9.0
 * xgboost==0.90
+* shap==0.32.1
 
 
 
